@@ -43,3 +43,6 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
           ssh -o StrictHostKeyChecking=no root@${{ secrets.REMOTE_HOST }} 'echo "Hello, World!"'
+      - name: Test rsync
+        run: | 
+          rsync -r tutorial.md root@${{ secrets.REMOTE_HOST }}:/www/bar/
