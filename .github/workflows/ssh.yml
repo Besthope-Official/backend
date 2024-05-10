@@ -34,15 +34,33 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: ssh to remote host
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      # - name: ssh to remote host
+      #   env:
+      #     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      #   run: |
+      #     mkdir -p ~/.ssh
+      #     echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+      #     chmod 600 ~/.ssh/id_rsa
+      #     ssh-keyscan ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
+      #     ssh -o StrictHostKeyChecking=no root@${{ secrets.REMOTE_HOST }} 'echo "Hello, World!"'
+      # - name: Test rsync
+      #   run: | 
+      #     rsync -r tutorial.md root@${{ secrets.REMOTE_HOST }}:/www/bar/
+      - name: Setup Python environment
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
         run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan ${{ secrets.REMOTE_HOST }} >> ~/.ssh/known_hosts
-          ssh -o StrictHostKeyChecking=no root@${{ secrets.REMOTE_HOST }} 'echo "Hello, World!"'
-      - name: Test rsync
-        run: | 
-          rsync -r tutorial.md root@${{ secrets.REMOTE_HOST }}:/www/bar/
+          cd demo/python-test
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Add environment variables
+        run: |
+          touch .env
+          echo "HDU_ACCOUNT=${{ secrets.HDU_ACCOUNT }}" >> .env
+          echo "HDU_PASSWORD=${{ secrets.HDU_PASSWORD }}" >> .env
+      - name: Run tests
+        run: |
+          python test.py
