@@ -51,16 +51,12 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
+      - name: Test for python-test
         run: |
           cd demo/python-test
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Add environment variables
-        run: |
           touch .env
           echo "HDU_ACCOUNT=${{ secrets.HDU_ACCOUNT }}" >> .env
           echo "HDU_PASSWORD=${{ secrets.HDU_PASSWORD }}" >> .env
-      - name: Run tests
-        run: |
           python test.py
