@@ -57,6 +57,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           touch .env
-          echo "HDU_ACCOUNT=${{ secrets.HDU_ACCOUNT }}" >> .env
-          echo "HDU_PASSWORD=${{ secrets.HDU_PASSWORD }}" >> .env
+          echo 'HDU_ACCOUNT=${{ secrets.HDU_ACCOUNT }}' >> .env
+          echo 'HDU_PASSWORD=${{ secrets.HDU_PASSWORD }}' >> .env
           python test.py
