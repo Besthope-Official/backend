@@ -1,5 +1,5 @@
 ---
-title: "测试驱动开发: TDD 简介"
+title: 测试驱动开发 TDD 简介
 ---
 
 # 工作汇报: SWUFE-OJ

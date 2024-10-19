@@ -181,6 +181,7 @@ Wikipedia: *Software documentation is written text or illustration that accompan
 - 一些在项目初就要定好的**技术实现**
   - 登录系统做 jwt 还是 session + cookie?
   - 前端轮询 or websockets?
+  - `Websocket` 或 `EventSource`?
 
 > 任何含糊的地方, 在将来都会变成回旋镖...
 
@@ -203,7 +204,7 @@ Wikipedia: *Software documentation is written text or illustration that accompan
 - 怎么改字段了 `user_name` -> `userName` 🤯
   - 喜欢不写 changelog
 
-<!-- vslide --> 
+<!-- vslide -->
 
 # so... why tech doc?
 
@@ -219,6 +220,12 @@ Wikipedia: *Software documentation is written text or illustration that accompan
 ### 这就是为什么我们反对胎教式的教学
 
 - 没了 tutorial, 寸步难行 ❌
+
+<!-- vslide -->
+
+# so... why tech doc?
+
+### You should blog even if you have no readers
 
 <!-- slide -->
 
