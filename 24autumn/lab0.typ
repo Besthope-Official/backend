@@ -57,8 +57,6 @@
 
 在菜单栏选择「文件-自动保存」, 这样可以省的你需要 `Ctrl+s` 手动保存.
 
-Control + Shift + P 打开命令面板, 选择 `install code command`
-
 使用命令行在当前目录打开 VSCode:
 
 ```bash
