@@ -101,7 +101,9 @@ df = pd.read_csv('data.csv', na_values=['NA', 'NULL'])
 
 虚拟环境可以为每一个项目安装独立的 Python 库，这样就可以隔离不同项目之间的 Python 库，也可以隔离项目与操作系统之间的 Python 库。
 
-Python 内置了用于创建虚拟环境的 `venv` 工具：
+这样你能够避免使用诸如 `sudo pip install ...`(Linux/MacOS) 来安装全局 Python 包(显然你不希望你的操作系统变得一团浆糊).
+
+Python 内置了(>3.4)用于创建虚拟环境的 `venv` 工具：
 
 ```bash
 python -m venv .venv
@@ -400,10 +402,15 @@ def index():
 
 == 参考资料
 
-#link("https://flask.palletsprojects.com/en/stable/")[Flask doc]: Flask 官方文档
+#link("https://flask.palletsprojects.com/en/stable/")[Flask doc]: Flask 官方文档.
 
-#link("https://tutorial.helloflask.com/")[Flask 入门教程]: 很好的中文在线教程
+#link("https://tutorial.helloflask.com/")[Flask 入门教程]: 很好的中文在线教程.
 
-#link("https://tutorial.djangogirls.org/zh/how_the_internet_works/")[互联网是如何工作的？]: 对这部分更感兴趣的同学可以参考一些计算机网络课程的导论部分.
+#link("https://tutorial.djangogirls.org/zh/how_the_internet_works/")[互联网是如何工作的？]: 对这部分更感兴趣的同学可以参考一些计算机网络课程(例如中科大)的导论部分.
+
+#link("https://www.zhihu.com/question/26387327/answer/3158798538")[编程中什么是「Context(上下文)」？]: 知乎上非常好的回答, OOP 是为了更好的管理上下文, DDD 是利用对象来构造上下文.
+
+#link("https://www.cnblogs.com/wongbingming/p/11002978.html")[花了两个星期，我终于把 WSGI 整明白了
+]: 深度讲解 WSGI 的文章.
 
 Flask Web 开发: 基于 Python 的 Web 应用开发实战: 这是一本很好的 Flask 入门书籍, 由于 DMCA 版权问题大家可以通过某种方式(例如 zlib)来下载它.
